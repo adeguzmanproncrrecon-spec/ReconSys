@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>File Upload</title>
+<link rel="stylesheet" href="upload.css">
+
+</head>
+
+<body>
+
+<div class="page">
+
+    <!-- Upload Panel -->
+
+    <div class="upload-card">
+
+        <h1>Import Data</h1>
+        <p class="subtitle">Select and upload your file.</p>
+
+        <div class="drop-zone">
+
+            <p class="drag-text">Drag files to upload</p>
+
+            <p class="or-text">or</p>
+
+            <label class="browse-btn">
+                Browse file
+                <input type="file" hidden>
+            </label>
+
+        </div>
+
+    </div>
+
+    <!-- Progress Panel -->
+
+    <div class="progress-card">
+
+        <h1>Uploading...</h1>
+        <p class="subtitle">It may take a while. Please Wait.</p>
+
+        <!-- File 1 -->
+
+        <div class="file-item">
+
+            <div class="icon-block">
+                <i class="fa-regular fa-image"></i>
+            </div>
+
+            <div class="file-info">
+                <h3>Photo_19754.png <span>• 5.2 mb</span></h3>
+                <p class="done">
+                    <i class="fa-solid fa-check"></i> Done
+                </p>
+            </div>
+
+            <i class="fa-regular fa-trash-can action"></i>
+
+        </div>
+
+        <!-- File 2 -->
+
+        <div class="file-item">
+
+            <div class="icon-block">
+                <i class="fa-regular fa-image"></i>
+            </div>
+
+            <div class="file-info">
+                <h3>Photo_317512.png <span>• 4.7 mb</span></h3>
+
+                <div class="progress">
+                    <div class="progress-red"></div>
+                </div>
+
+                <p class="error">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    Error
+                </p>
+            </div>
+
+            <i class="fa-solid fa-xmark action"></i>
+
+        </div>
+
+        <!-- File 3 -->
+
+        <div class="file-item">
+
+            <div class="icon-block">
+                <i class="fa-regular fa-file-pdf"></i>
+            </div>
+
+            <div class="file-info">
+
+                <h3>File_print_final.pdf <span>• 14.1 mb</span></h3>
+
+                <div class="progress">
+                    <div class="progress-blue"></div>
+                </div>
+
+                <div class="upload-status">
+                    <span>12% done</span>
+                    <span>140KB/sec</span>
+                </div>
+
+            </div>
+
+            <i class="fa-solid fa-xmark action"></i>
+
+        </div>
+
+        <button class="cancel-btn">
+            Cancel
+        </button>
+
+    </div>
+
+</div>
+
+</body>
+</html>

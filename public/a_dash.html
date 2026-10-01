@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="adashstyles.css" />
+    </head>
+        <body>
+            <div id="content-area">
+        <section class="content-column">
+          <div class="welcome"><h1>Welcome, Mar</h1><p>Automated reconciliation for multiple facilities.</p></div>
+         
+
+          <section class="stat-grid" aria-label="Summary statistics">
+            <article class="stat-card"><div class="stat-icon blue"><i data-lucide="building-2"></i></div><div><span>Total facilities</span><strong>12</strong><a href="#hospitals">Active facilities <i data-lucide="chevron-right"></i></a></div></article>
+            <article class="stat-card"><div class="stat-icon green"><i data-lucide="file-text"></i></div><div><span>Total Files Processed</span><strong>1,248</strong><small class="positive"><i data-lucide="arrow-up"></i>12%</small><small>vs. last 7 days</small></div></article>
+            <article class="stat-card"><div class="stat-icon purple"><i data-lucide="circle-check-big"></i></div><div><span>Total Matched Claims</span><strong>1,032,489</strong><small><b>96.7%</b> match rate</small></div></article>
+            <article class="stat-card"><div class="stat-icon red"><i data-lucide="triangle-alert"></i></div><div><span>Total Unmatched Claims</span><strong>35,721</strong><small><b>3.3%</b> exception rate</small></div></article>
+          </section>
+
+          <section class="workflow-grid">
+            <button class="workflow-card upload" data-action="upload"><div class="round"><i data-lucide="cloud-upload"></i></div><div><strong>Upload Source File</strong><span>Upload hospital claim files or raw extract files.</span></div><i data-lucide="arrow-right"></i></button>
+            <button class="workflow-card reconcile" data-action="reconcile"><div class="round"><i data-lucide="settings-2"></i></div><div><strong>Run Reconciliation</strong><span>Execute batch matching for selected hospitals.</span></div><i data-lucide="arrow-right"></i></button>
+            <button class="workflow-card report" data-action="report"><div class="round"><i data-lucide="file-text"></i></div><div><strong>Generate Reports</strong><span>Export reconciled results using templates.</span></div><i data-lucide="arrow-right"></i></button>
+          </section>
+        </section>
+        
+        </div>
+        </body>
+   
+</html>

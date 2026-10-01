@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ReconciliationPro Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="adashstyles.css" />
+</head>
+<body>
+
+  <div class="app-shell">
+
+   
+
+      <aside class="sidebar" id="sidebar">
+      <nav class="nav">
+        
+    <a class="nav-item" href="a_dash.html" target="content-frame"><i data-lucide="house"></i><span>Dashboard</span></a>
+    <a class="nav-item" href="a_faciwithloi.html" target="content-frame"><i data-lucide="building-2"></i><span>Facilities with LOI</span></a>
+    <a class="nav-item" href="a_facinoloi.html" target="content-frame"><i data-lucide="building-2"></i><span>Facilities without LOI</span></a>
+    <a class="nav-item" href="import.html" target="content-frame"><i data-lucide="database"></i><span>Data Ingestion</span></a>
+    <a class="nav-item" href="a_reconciliation.html" target="content-frame"><i data-lucide="git-compare-arrows"></i><span>Reconciliation</span></a>
+    <a class="nav-item" href="a_reports.html" target="content-frame"><i data-lucide="file-text"></i><span>Reports</span></a>
+    <a class="nav-item" href="a_dash.html" target="content-frame"><i data-lucide="layout-template"></i><span>Templates</span></a>
+    <a class="nav-item" href="a_dash.html" target="content-frame"><i data-lucide="clipboard-list"></i><span>System Logs</span></a>
+    <a class="nav-item" href="a_dash.html" target="content-frame"><i data-lucide="settings"></i><span>Settings</span></a>
+
+       </nav>
+       </aside>  
+       <div class="workspace">
+           <header class="topbar">
+        <div class="brand">
+          <div class="brand-mark"><img src="img/ReconNew.png" alt=""></div> 
+          <div><strong>Reconciliation System</strong>
+          <div><span>Automated Financial Reconciliation</span> </div></div>
+        </div>
+        
+        <div class="topbar-spacer"></div>
+        <div class="avatar">M</div>
+        <div class="profile"><strong>Mar</strong><small>System Admin</small></div>
+        <button class="icon-button"><i data-lucide="chevron-down"></i></button>
+      </header>
+      <main class="main-content">
+        <iframe src="a_dash.html" name="content-frame" style="border:none" width="100%" height="700%" title="Main Content"></iframe>
+      </main>
+      </div>
+        
+      
+   
+
+
+    
+  </div>
+
+  <input id="fileInput" type="file" hidden accept=".csv,.xlsx,.xls" />
+  <div class="toast" id="toast" role="status"></div>
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
+    <form class="modal" id="hospitalForm"><div class="modal-header"><h2>Add Hospital</h2><button type="button" class="icon-button" id="closeModal"><i data-lucide="x"></i></button></div><label>Hospital name<input name="name" required placeholder="Example Medical Center"></label><label>Code<input name="code" required maxlength="6" placeholder="EMC"></label><div class="modal-actions"><button type="button" id="cancelModal">Cancel</button><button class="primary" type="submit">Add Hospital</button></div></form>
+  </div>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <script src="app.js"></script>
+  
+  <script> lucide.createIcons(); </script>
+</body>
+</html>

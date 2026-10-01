@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Hospital claims reconciliation dashboard" />
+  <title>Claims Reconciliation Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Claims Reconciliation Portal home">
+        <span class="brand-mark"><img src="img/ReconNew.png" alt=""></span>
+        <span><strong>Mary Johnston Hospital, Inc.</strong><small>Claims Reconciliation Portal</small></span>
+      </a>
+      <div class="topbar-actions">
+        <button class="icon-button notification-button" aria-label="Notifications">
+          <i class="fa-solid fa-bell"></i><span class="badge">3</span>
+        </button>
+        <button class="profile-button" id="profileButton" aria-expanded="false">
+          <span class="avatar">JD</span>
+          <span class="profile-copy"><strong>Jane Dela Cruz</strong><small>Hospital User</small></span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="profile-menu" id="profileMenu">
+          <button><i class="fa-regular fa-user"></i> Profile</button>
+          <button><i class="fa-solid fa-right-from-bracket"></i> Sign out</button>
+        </div>
+      </div>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a class="nav-link active" href="#dashboard"><i class="fa-solid fa-house"></i><span>Dashboard</span></a>
+        <a class="nav-link" href="#upload"><i class="fa-solid fa-cloud-arrow-up"></i><span>Upload Claims</span></a>
+        <a class="nav-link" href="#files"><i class="fa-regular fa-file-lines"></i><span>My Files</span></a>
+        <a class="nav-link" href="#status"><i class="fa-solid fa-clipboard-check"></i><span>Claims Status</span></a>
+        <a class="nav-link" href="#reports"><i class="fa-solid fa-chart-simple"></i><span>Reconciliation Reports</span></a>
+        <a class="nav-link" href="#notifications"><i class="fa-solid fa-bell"></i><span>Notifications</span><span class="nav-badge">3</span></a>
+        <a class="nav-link" href="#settings"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+      </nav>
+      <small class="version">Version 1.0.0</small>
+    </aside>
+
+    <button class="mobile-menu" id="mobileMenu" aria-label="Open navigation"><i class="fa-solid fa-bars"></i></button>
+
+    <main class="main-content" id="dashboard">
+      <section class="content-column">
+        <section class="welcome-panel">
+          <div class="welcome-copy">
+            <span class="welcome-icon"><i class="fa-solid fa-hospital"></i></span>
+            <div><h1>Welcome, Jane Dela Cruz</h1><p>Manage your hospital claims, upload files and track reconciliation status.</p></div>
+          </div>
+          <button class="period-picker" id="periodPicker">
+            <i class="fa-regular fa-calendar"></i>
+            <span><small>Reconciliation Period</small><strong>Jan 1, 2025 – Dec 31, 2025</strong></span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+        </section>
+
+        <section class="metric-grid" aria-label="Claims summary">
+          <article class="metric-card"><span class="metric-icon blue"><i class="fa-solid fa-cloud-arrow-up"></i></span><div><small>Total Files Uploaded</small><strong id="totalCount">12</strong><p>This period</p></div><i class="fa-solid fa-chevron-right metric-arrow"></i></article>
+          <article class="metric-card"><span class="metric-icon green"><i class="fa-solid fa-check"></i></span><div><small>Files Processed</small><strong id="processedCount">10</strong><p>83.3% success rate</p></div><i class="fa-solid fa-chevron-right metric-arrow green-text"></i></article>
+          <article class="metric-card"><span class="metric-icon purple"><i class="fa-regular fa-clock"></i></span><div><small>In Progress</small><strong id="progressCount">1</strong><p>Currently processing</p></div><i class="fa-solid fa-chevron-right metric-arrow purple-text"></i></article>
+          <article class="metric-card"><span class="metric-icon red"><i class="fa-solid fa-exclamation"></i></span><div><small>Failed</small><strong id="failedCount">1</strong><p>Needs attention</p></div><i class="fa-solid fa-chevron-right metric-arrow red-text"></i></article>
+        </section>
+
+        <section class="panel upload-panel" id="upload">
+          <div class="section-heading"><h2>Upload Claims Files</h2><p>Upload your hospital claims files (ICS, Extract Data, etc.) in Excel format. The system will validate and process your files automatically.</p></div>
+          <div class="upload-layout">
+            <div class="drop-zone" id="dropZone" tabindex="0" role="button" aria-label="Upload files">
+              <input type="file" id="fileInput" accept=".xlsx,.xls" multiple hidden>
+              <i class="fa-solid fa-cloud-arrow-up drop-icon"></i>
+              <strong>Drag and drop files here</strong><span>or</span>
+              <button class="primary-dark-button" id="browseButton" type="button">Browse Files</button>
+              <small>Supported formats: .xlsx (Excel) &nbsp; Max file size: 100 MB</small>
+            </div>
+            <aside class="naming-guide">
+              <h3><i class="fa-regular fa-file-lines"></i> File Naming Examples</h3>
+              <ul><li>MJH PHIC RECON CLAIMS_ICS.xlsx</li><li>EXTRACT DATA MARY JOHNSTON HOSPITAL, INC. - 2017-MAY.14.26.xlsx</li></ul>
+              <a href="#format-guide">View File Format Guide <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </aside>
+          </div>
+        </section>
+
+        <section class="panel files-panel" id="files">
+          <div class="files-header">
+            <h2>Uploaded Files</h2>
+            <div class="table-tools">
+              <label class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input id="fileSearch" type="search" placeholder="Search files..." aria-label="Search files"></label>
+              <select id="statusFilter" aria-label="Filter by status"><option value="All">All Status</option><option>Processed</option><option>Processing</option><option>Failed</option></select>
+            </div>
+          </div>
+          <div class="table-wrap"><table><thead><tr><th>File Name</th><th>Type</th><th>Hospital</th><th>Uploaded By</th><th>Date &amp; Time</th><th>Status</th><th>Actions</th></tr></thead><tbody id="filesBody"></tbody></table></div>
+          <div class="table-footer"><small id="showingText"></small><div class="pagination" id="pagination"></div></div>
+        </section>
+      </section>
+
+      <aside class="right-column">
+        <section class="panel quick-actions"><h2>Quick Actions</h2><button class="action-primary" id="quickUpload"><i class="fa-solid fa-upload"></i>Upload New File</button><button><i class="fa-regular fa-file-lines"></i>View Reconciliation Reports<i class="fa-solid fa-chevron-right"></i></button><button><i class="fa-solid fa-magnifying-glass"></i>Check Claim Status<i class="fa-solid fa-chevron-right"></i></button><button><i class="fa-solid fa-download"></i>Download Template<i class="fa-solid fa-chevron-right"></i></button></section>
+        <section class="panel recent-panel"><div class="panel-title-row"><h2>Recent Activity</h2><button class="text-button">View All</button></div><div id="activityList"></div></section>
+        <section class="panel assistance"><span class="assist-icon"><i class="fa-solid fa-headset"></i></span><div><h3>Need Assistance?</h3><p>For technical support or inquiries, please contact your administrator.</p><button><i class="fa-regular fa-envelope"></i> Contact Support</button></div></section>
+      </aside>
+    </main>
+  </div>
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>

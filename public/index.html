@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Screen</title>
+<link rel="stylesheet" href="styles.css">
+
+
+</head>
+
+<body>
+
+<div class="background">
+
+    <div class="circle one"></div>
+    <div class="circle two"></div>
+    <div class="blob"></div>
+
+    <div class="login-container">
+    <img src="img/ReconNew.png" alt="" width="300" height="300">
+        <div class="logo">
+            <i class="fa-solid fa-cart-arrow-down"></i>
+        </div>
+
+
+    <form id="login-form" >
+
+        <div class="input-box">
+               <i class="fa-regular fa-user"></i>
+
+             <input
+            id="user"
+            name="user"
+            type="user"
+            autocomplete="user"
+            placeholder="USERNAME"
+            required
+        >
+        </div>
+
+     <div class="input-box">
+        <i class="fa-solid fa-lock"></i>
+        
+
+        <input
+            id="password"
+            name="password"
+            type="password"
+            autocomplete="current-password"
+            placeholder="PASSWORD"
+            required
+        >
+     </div>
+
+     <button
+        id="login-button"
+        type="submit"
+        class="login-btn"
+                         >
+        LOGIN
+     </button>
+     <p
+        id="login-message" 
+        class="login-message"
+        role="status"
+        aria-live="polite"
+      ></p>
+
+    </form>
+ <div><a href="registerform.html" target="_blank" style="color: white;">Register</a></div>
+ <div>-</div>
+ <div><a href="https://example.com" target="_blank" style="color: white;">Forgot password ?</a></div>
+<!-- auth.jsscript>
+
+        <form id="login-form">
+
+            <div class="input-box">
+                <i class="fa-regular fa-user"></i>
+                <input
+                    type="text"
+                    placeholder="USERNAME"
+                    required>
+            </div>
+
+            <div class="input-box">
+                <i class="fa-solid fa-lock"></i>
+                <input
+                    type="password"
+                    placeholder="PASSWORD"
+                    required>
+            </div>
+
+            <button type="submit" class="login-btn">
+                LOGIN
+            </button>
+
+            <a href="https://example.com" target="_blank" style="color: white;">Forgot password ?</a>
+                
+            </a>
+
+        </form>-->
+        
+
+    </div>
+
+</div>
+
+<script>
+document
+.getElementById("login-form")
+.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    alert("Login Success");
+
+    window.location.href="a_dashboard.html";
+
+});
+</script>
+
+</body>
+</html>
